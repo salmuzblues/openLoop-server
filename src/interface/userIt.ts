@@ -3,5 +3,6 @@ export interface User {
   lastName: string;
   email: string;
   notes: string;
+  status: boolean;
 }
 

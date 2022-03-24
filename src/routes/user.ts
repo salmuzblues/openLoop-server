@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Get All User 
 router.get('/user-list', [], async(req: Request, res: Response) => {
-  const resp = await User.find({});
+  const resp = await User.find({ status: true });
   return res.send(resp);
 });
 
@@ -12,10 +12,16 @@ router.get('/user-list', [], async(req: Request, res: Response) => {
 router.post('/delete-user', [], async(req: Request, res: Response) => {
   const userId = req.body.userId;
   
-  const resp = await User.deleteOne({ _id: userId} );
+  const resp = await User.updateOne(
+    { 
+      _id: userId
+    },
+    {
+      status: false
+    } 
+  );
   if(!resp) res.send('Error: Server');
   return res.send(resp);
-
 });
 
 // Insert User

@@ -19,6 +19,10 @@ const userSchema = new Schema<User>({
   notes: {
     type: String,
     required: true
+  },
+  status: {
+    type: Boolean,
+    default: true
   }
 });
 module.exports = mongoose.model('User', userSchema, collectionName);
