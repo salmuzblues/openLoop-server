@@ -8,7 +8,10 @@ Run your mongoDb
 In my case is:
 ### `mongod --dbpath=/Users/{user_mac}/data/db`
 
+Second:
 ### `npm install`
+
+Third: Go to branch "Master"
 
 Run the server 
 ### `npm start` 
