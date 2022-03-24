@@ -20,10 +20,10 @@ router.post('/delete-user', [], async(req: Request, res: Response) => {
 
 // Insert User
 router.post('/insert',async (req: Request, res: Response) => {
-  var firstName = req.body.txtName; 
-  var lastName = req.body.txtLastName;
-  var email = req.body.txtEmail;
-  var notes = req.body.txtNotes;
+  var firstName = req.body.firstName; 
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+  var notes = req.body.note;
 
   const data = new User({
     firstName,
