@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import { User }  from '../interface/userIt';
+var collectionName = 'user'; 
+const Schema  = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema<User>({
   firstName :{
     type: String,
     required: true
@@ -13,11 +16,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  note: {
+  notes: {
     type: String,
     required: true
   }
 });
-const User = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema, collectionName);
 
-export { User };
+ 
